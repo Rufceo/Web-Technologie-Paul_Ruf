@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speisekarte - Gasthaus Zum Goldenen Krug</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="menu-header">Speisekarte</h1>
+        <nav>
+            <ul class="nav-grid">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="speisekarte.html">Speisekarte</a></li>
+                <li><a href="reservierung.html">Reservierung</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <!-- Sprachwechsel Dropdown -->
+        <select id="language-switcher" onchange="switchLanguage()">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <section class="menu">
+        <h2 id="menu-heading">Digitale Speisekarte</h2>
+
+        <div class="menu-item">
+            <h3 id="menu-pdf">Speisekarte als PDF</h3>
+            <embed src="uploads/speisekarte.pdf" width="100%" height="500px" type="application/pdf">
+            <p><a href="uploads/speisekarte.pdf" download id="menu-download">Speisekarte herunterladen</a></p>
+        </div>
+
+        <div class="menu-item">
+            <h3 id="lunch-pdf">Mittagsstammtisch PDF</h3>
+            <embed src="uploads/mittagsstammtisch.pdf" width="100%" height="500px" type="application/pdf">
+            <p><a href="uploads/mittagsstammtisch.pdf" download id="lunch-download">Mittagsstammtisch herunterladen</a></p>
+        </div>
+
+        <div class="menu-item">
+            <h3 id="happy-pdf">Happy Hour PDF</h3>
+            <embed src="uploads/happyhour.pdf" width="100%" height="500px" type="application/pdf">
+            <p><a href="uploads/happyhour.pdf" download id="happy-download">Happy Hour herunterladen</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gasthaus Zum Goldenen Krug - Alle Rechte vorbehalten</p>
+    </footer>
+
+    <script>
+        // Sprachwechsel-Funktion
+        function switchLanguage() {
+            var language = document.getElementById('language-switcher').value;
+            document.cookie = "lang=" + language + "; path=/";  // Sprache als Cookie speichern
+
+            if (language === 'en') {
+                document.getElementById('menu-header').innerText = 'Menu';
+                document.getElementById('menu-heading').innerText = 'Digital Menu';
+                document.getElementById('menu-pdf').innerText = 'Menu as PDF';
+                document.getElementById('menu-download').innerText = 'Download Menu';
+                document.getElementById('lunch-pdf').innerText = 'Lunch Specials PDF';
+                document.getElementById('lunch-download').innerText = 'Download Lunch Specials';
+                document.getElementById('happy-pdf').innerText = 'Happy Hour PDF';
+                document.getElementById('happy-download').innerText = 'Download Happy Hour';
+            } else {
+                document.getElementById('menu-header').innerText = 'Speisekarte';
+                document.getElementById('menu-heading').innerText = 'Digitale Speisekarte';
+                document.getElementById('menu-pdf').innerText = 'Speisekarte als PDF';
+                document.getElementById('menu-download').innerText = 'Speisekarte herunterladen';
+                document.getElementById('lunch-pdf').innerText = 'Mittagsstammtisch PDF';
+                document.getElementById('lunch-download').innerText = 'Mittagsstammtisch herunterladen';
+                document.getElementById('happy-pdf').innerText = 'Happy Hour PDF';
+                document.getElementById('happy-download').innerText = 'Happy Hour herunterladen';
+            }
+        }
+
+        // Funktion, um die Sprache aus dem Cookie zu laden und zu setzen
+        function getCookie(name) {
+            var cookieArr = document.cookie.split(";");
+            for (var i = 0; i < cookieArr.length; i++) {
+                var cookiePair = cookieArr[i].split("=");
+                if (name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+
+        // Sprache beim Laden der Seite anwenden
+        window.onload = function () {
+            var language = getCookie('lang');
+            if (language) {
+                document.getElementById('language-switcher').value = language;
+                switchLanguage();  // Anwenden der gespeicherten Sprache
+            }
+        };
+    </script>
+</body>
+</html>
