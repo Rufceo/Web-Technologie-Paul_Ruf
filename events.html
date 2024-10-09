@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Gasthaus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="events-header">Events</h1>
+        <nav>
+            <ul class="nav-grid">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="speisekarte.html">Speisekarte</a></li>
+                <li><a href="reservierung.html">Reservierung</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <!-- Sprachwechsel Dropdown -->
+        <select id="language-switcher" onchange="switchLanguage()">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <section class="events">
+        <h2 id="events-text">Bevorstehende Veranstaltungen</h2>
+        <p id="events-info">Informieren Sie sich über unsere bevorstehenden Veranstaltungen und Events.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gasthaus Zum Goldenen Krug - Alle Rechte vorbehalten</p>
+    </footer>
+
+    <script>
+        // Sprachwechsel-Funktion
+        function switchLanguage() {
+            var language = document.getElementById('language-switcher').value;
+            if (language === 'en') {
+                document.getElementById('events-header').innerText = 'Events';
+                document.getElementById('events-text').innerText = 'Upcoming Events';
+                document.getElementById('events-info').innerText = 'Find out about our upcoming events and special occasions.';
+            } else {
+                document.getElementById('events-header').innerText = 'Events';
+                document.getElementById('events-text').innerText = 'Bevorstehende Veranstaltungen';
+                document.getElementById('events-info').innerText = 'Informieren Sie sich über unsere bevorstehenden Veranstaltungen und Events.';
+            }
+        }
+    </script>
+</body>
+</html>
