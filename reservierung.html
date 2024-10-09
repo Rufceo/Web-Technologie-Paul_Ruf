@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservierung - Gasthaus Zum Goldenen Krug</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="reservation-header">Reservierung</h1>
+        <nav>
+            <ul class="nav-grid">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="speisekarte.html">Speisekarte</a></li>
+                <li><a href="reservierung.html">Reservierung</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <!-- Sprachwechsel Dropdown -->
+        <select id="language-switcher" onchange="switchLanguage()">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <section class="reservation">
+        <h2 id="reservation-text">Reservieren Sie jetzt einen Tisch</h2>
+        <p id="opening-hours">Öffnungszeiten: Montag - Freitag: 12:00 - 22:00 Uhr, Samstag - Sonntag: 14:00 - 23:00 Uhr</p>
+        <p id="reservation-info">Um einen Tisch zu reservieren, rufen Sie uns bitte an oder nutzen Sie unser Kontaktformular.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gasthaus Zum Goldenen Krug - Alle Rechte vorbehalten</p>
+    </footer>
+
+    <script>
+        // Sprachwechsel-Funktion
+        function switchLanguage() {
+            var language = document.getElementById('language-switcher').value;
+            document.cookie = "lang=" + language + "; path=/";  // Sprache als Cookie speichern
+
+            if (language === 'en') {
+                document.getElementById('reservation-header').innerText = 'Reservation';
+                document.getElementById('reservation-text').innerText = 'Reserve a Table Now';
+                document.getElementById('opening-hours').innerText = 'Opening Hours: Monday - Friday: 12:00 PM - 10:00 PM, Saturday - Sunday: 2:00 PM - 11:00 PM';
+                document.getElementById('reservation-info').innerText = 'To reserve a table, please call us or use our contact form.';
+            } else {
+                document.getElementById('reservation-header').innerText = 'Reservierung';
+                document.getElementById('reservation-text').innerText = 'Reservieren Sie jetzt einen Tisch';
+                document.getElementById('opening-hours').innerText = 'Öffnungszeiten: Montag - Freitag: 12:00 - 22:00 Uhr, Samstag - Sonntag: 14:00 - 23:00 Uhr';
+                document.getElementById('reservation-info').innerText = 'Um einen Tisch zu reservieren, rufen Sie uns bitte an oder nutzen Sie unser Kontaktformular.';
+            }
+        }
+
+        // Funktion, um die Sprache aus dem Cookie zu laden und zu setzen
+        function getCookie(name) {
+            var cookieArr = document.cookie.split(";");
+            for (var i = 0; i < cookieArr.length; i++) {
+                var cookiePair = cookieArr[i].split("=");
+                if (name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+
+        // Sprache beim Laden der Seite anwenden
+        window.onload = function () {
+            var language = getCookie('lang');
+            if (language) {
+                document.getElementById('language-switcher').value = language;
+                switchLanguage();  // Anwenden der gespeicherten Sprache
+            }
+        };
+    </script>
+</body>
+</html>
