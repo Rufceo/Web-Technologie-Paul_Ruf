@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns - Gasthaus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="about-header">Über uns</h1>
+        <nav>
+            <ul class="nav-grid">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="speisekarte.html">Speisekarte</a></li>
+                <li><a href="reservierung.html">Reservierung</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <!-- Sprachwechsel Dropdown -->
+        <select id="language-switcher" onchange="switchLanguage()">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <section class="about">
+        <h2 id="about-text">Unsere Geschichte</h2>
+        <p id="about-description">Das Gasthaus bietet seit Jahrzehnten traditionelle Küche in einer gemütlichen Atmosphäre.</p>
+        <p id="about-description-more">Unsere Leidenschaft ist es, Ihnen unvergessliche kulinarische Erlebnisse zu bieten.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gasthaus - Alle Rechte vorbehalten</p>
+    </footer>
+
+    <script>
+        // Sprachwechsel-Funktion
+        function switchLanguage() {
+            var language = document.getElementById('language-switcher').value;
+            if (language === 'en') {
+                document.getElementById('about-header').innerText = 'About Us';
+                document.getElementById('about-text').innerText = 'Our Story';
+                document.getElementById('about-description').innerText = 'The Gasthaus has been offering traditional cuisine in a cozy atmosphere for decades.';
+                document.getElementById('about-description-more').innerText = 'Our passion is to provide you with unforgettable culinary experiences.';
+            } else {
+                document.getElementById('about-header').innerText = 'Über uns';
+                document.getElementById('about-text').innerText = 'Unsere Geschichte';
+                document.getElementById('about-description').innerText = 'Das Gasthaus bietet seit Jahrzehnten traditionelle Küche in einer gemütlichen Atmosphäre.';
+                document.getElementById('about-description-more').innerText = 'Unsere Leidenschaft ist es, Ihnen unvergessliche kulinarische Erlebnisse zu bieten.';
+            }
+        }
+    </script>
+</body>
+</html>
