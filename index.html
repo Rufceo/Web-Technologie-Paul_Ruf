@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasthaus Zum Goldenen Krug - Willkommen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url('uploads/background.jpg');">
+
+    <header>
+        <h1 id="welcome-text">Willkommen im Gasthaus Zum Goldenen Krug!</h1>
+        <nav>
+            <ul class="nav-grid">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="speisekarte.html">Speisekarte</a></li>
+                <li><a href="reservierung.html">Reservierung</a></li>
+                <li><a href="ueber-uns.html">Über uns</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <!-- Sprachwechsel Dropdown -->
+        <select id="language-switcher" onchange="switchLanguage()">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <section class="landing">
+        <h2 id="welcome-heading">Genießen Sie unser rustikales Ambiente und unsere Hausmannskost!</h2>
+        <p id="welcome-text">Besuchen Sie uns und entdecken Sie unsere köstliche Speisekarte. Reservieren Sie noch heute einen Tisch für ein unvergessliches Erlebnis!</p>
+        <div class="btn-grid">
+            <a href="speisekarte.html" class="btn" id="menu-btn">Unsere Speisekarte</a>
+            <a href="reservierung.html" class="btn" id="reserve-btn">Jetzt reservieren</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gasthaus Zum Goldenen Krug - Alle Rechte vorbehalten</p>
+    </footer>
+
+    <script>
+        // Sprachwechsel-Funktion
+        function switchLanguage() {
+            var language = document.getElementById('language-switcher').value;
+            document.cookie = "lang=" + language + "; path=/";  // Sprache als Cookie speichern
+
+            if (language === 'en') {
+                document.getElementById('welcome-text').innerText = 'Welcome to the Gasthaus Zum Goldenen Krug!';
+                document.getElementById('welcome-heading').innerText = 'Enjoy our rustic atmosphere and homemade cuisine!';
+                document.getElementById('menu-btn').innerText = 'Our Menu';
+                document.getElementById('reserve-btn').innerText = 'Reserve Now';
+            } else {
+                document.getElementById('welcome-text').innerText = 'Willkommen im Gasthaus Zum Goldenen Krug!';
+                document.getElementById('welcome-heading').innerText = 'Genießen Sie unser rustikales Ambiente und unsere Hausmannskost!';
+                document.getElementById('menu-btn').innerText = 'Unsere Speisekarte';
+                document.getElementById('reserve-btn').innerText = 'Jetzt reservieren';
+            }
+        }
+
+        // Funktion, um die Sprache aus dem Cookie zu laden und zu setzen
+        function getCookie(name) {
+            var cookieArr = document.cookie.split(";");
+            for (var i = 0; i < cookieArr.length; i++) {
+                var cookiePair = cookieArr[i].split("=");
+                if (name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+
+        // Sprache beim Laden der Seite anwenden
+        window.onload = function () {
+            var language = getCookie('lang');
+            if (language) {
+                document.getElementById('language-switcher').value = language;
+                switchLanguage();  // Anwenden der gespeicherten Sprache
+            }
+        };
+    </script>
+</body>
+</html>
