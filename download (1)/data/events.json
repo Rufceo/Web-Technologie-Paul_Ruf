@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Happy Hour",
+        "description": "Jeden Freitag von 18:00 bis 20:00 Uhr.",
+        "link": "https://example.com/happy-hour"
+    },
+    {
+        "title": "Live-Musik",
+        "description": "Erleben Sie Live-Musik jeden Samstag ab 19:00 Uhr.",
+        "link": "https://example.com/live-musik"
+    },
+    {
+        "title": "Kochkurs",
+        "description": "Lernen Sie die Geheimnisse der Küche unseres Chefkochs.",
+        "link": "https://example.com/kochkurs"
+    }
+]
+

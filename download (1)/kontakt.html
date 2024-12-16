@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Gasthaus Zum Goldenen Krug</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 id="contact-header" data-translate-de="Kontakt" data-translate-en="Contact Us">Kontakt</h1>
+        <nav id="nav-bar">
+            <button id="menu-toggle" aria-label="Navigation umschalten">☰</button>
+            <ul class="nav-list">
+                <li><a href="index.html" data-translate-de="Home" data-translate-en="Home">Home</a></li>
+                <li><a href="speisekarte.html" data-translate-de="Speisekarte" data-translate-en="Menu">Speisekarte</a></li>
+                <li><a href="reservierung.html" data-translate-de="Reservierung" data-translate-en="Reservation">Reservierung</a></li>
+                <li><a href="ueber-uns.html" data-translate-de="Über uns" data-translate-en="About Us">Über uns</a></li>
+                <li><a href="kontakt.html" data-translate-de="Kontakt" data-translate-en="Contact">Kontakt</a></li>
+                <li><a href="events.html" data-translate-de="Events" data-translate-en="Events">Events</a></li>
+                <li><a href="impressum.html" data-translate-de="Impressum" data-translate-en="Legal Notice">Impressum</a></li>
+                
+            </ul>
+        </nav>
+        <!-- Sprachauswahl nach rechts -->
+        <div class="language-switcher-wrapper">
+            <select id="language-switcher">
+                <option value="de">DE</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h2 id="contact-text" data-translate-de="Kontaktieren Sie uns" data-translate-en="Get in touch with us">Kontaktieren Sie uns</h2>
+            <form action="submit_form.php" method="POST" class="contact-form">
+                <label for="name" id="name-label" data-translate-de="Name:" data-translate-en="Name:">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email" id="email-label" data-translate-de="E-Mail:" data-translate-en="Email:">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message" id="message-label" data-translate-de="Nachricht:" data-translate-en="Message:">Nachricht:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" id="submit-btn" data-translate-de="Absenden" data-translate-en="Send">Absenden</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gasthaus Zum Goldenen Krug</p>
+        <nav id="nav-bar2">
+            <button id="menu-toggle-footer" aria-label="Navigation umschalten">☰</button>
+            <div class="footer-container">
+                <ul class="nav-list">
+                    <li><a href="login.html" data-translate-de="Login" data-translate-en="Login">Login</a></li>
+                    <li><a href="impressum.html" data-translate-de="Impressum" data-translate-en="Legal Notice">Impressum</a></li>
+                </ul>
+        </nav>
+    </footer>
+
+    <script src="assets/js/scripts.js" defer></script>
+</body>
+</html>

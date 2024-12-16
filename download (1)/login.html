@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/admin.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Admin Login</h1>
+        <nav id="nav-bar">
+            <ul class="nav-list">
+                <li><a href="index.html" data-translate-de="Home" data-translate-en="Home">Home</a></li>
+                <li><a href="speisekarte.html" data-translate-de="Speisekarte" data-translate-en="Menu">Speisekarte</a></li>
+                <li><a href="reservierung.html" data-translate-de="Reservierung" data-translate-en="Reservation">Reservierung</a></li>
+                <li><a href="ueber-uns.html" data-translate-de="Über uns" data-translate-en="About Us">Über uns</a></li>
+                <li><a href="kontakt.html" data-translate-de="Kontakt" data-translate-en="Contact">Kontakt</a></li>
+                <li><a href="events.html" data-translate-de="Events" data-translate-en="Events">Events</a></li>
+                <li><a href="impressum.html" data-translate-de="Impressum" data-translate-en="Legal Notice">Impressum</a></li>
+                
+            </ul>
+        </nav>
+        <div class="language-switcher-wrapper">
+            <select id="language-switcher">
+                <option value="de">DE</option>
+                <option value="en">EN</option>
+            </select>
+            </div>
+    </header>
+    <main>
+        <form id="login-form">
+            <label for="username">Benutzername:</label>
+            <input type="text" id="username" required>
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Einloggen</button>
+        </form>
+        <p id="login-error" class="error-message"></p>
+        <div id="admin-panel" style="display: none;">
+            <h2>Speisekarte verwalten</h2>
+            <label for="menu-pdf">PDF-URL:</label>
+            <input type="text" id="menu-pdf" placeholder="URL der Speisekarte" required>
+            <button id="save-menu">Speichern</button>
+            <p id="menu-save-status"></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Gasthaus Zum Goldenen Krug</p>
+        <nav id="nav-bar2">
+            <button id="menu-toggle-footer" aria-label="Navigation umschalten">☰</button>
+            <div class="footer-container">
+                <ul class="nav-list">
+                    <li><a href="login.html" data-translate-de="Login" data-translate-en="Login">Login</a></li>
+                    <li><a href="impressum.html" data-translate-de="Impressum" data-translate-en="Legal Notice">Impressum</a></li>
+                </ul>
+        </nav>
+    </footer>
+</html>
