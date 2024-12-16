@@ -185,9 +185,7 @@ footer p {
         align-items: flex-start;
     }
 
-    .footer-container .nav-list {
-        margin: 0 0 1rem 0;
-    }
+ 
 }
 
 @media (max-width: 480px) {
