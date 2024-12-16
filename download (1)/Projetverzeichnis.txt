@@ -1,0 +1,21 @@
+/
+├─ index.html
+├─ speisekarte.html
+├─ events.html
+├─ reservierung.html
+├─ ueber-uns.html
+├─ kontakt.html
+├─ impressum.html
+├─ login.html
+├─ data/
+│  └─ events.json
+├─ uploads/
+│  └─ speisekarte.pdf (Standard-PDF)
+├─ assets/
+│  ├─ css/
+│  │  └─ style.css
+│  ├─ js/
+│  │  ├─ admin.js
+│  │  ├─ menu.js
+│  │  ├─ rss_search_events.js
+│  │  └─ scripts.js
